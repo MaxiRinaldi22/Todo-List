@@ -1,0 +1,81 @@
+main {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  border-bottom: 2px solid;
+  margin-bottom: 20px;
+}
+
+.container-add {
+  margin-bottom: 50px;
+}
+
+.input-add {
+  border-radius: 12px 0 0;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.btn-add {
+  border-radius: 0 0 12px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.tasks {
+  width: 500px;
+  height: 650px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 12px 0;
+}
+
+.task {
+  width: 480px;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.task-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+}
+
+.btn-trash {
+  color: white;
+  background-color: transparent;
+
+  cursor: pointer;
+  border: none;
+}
+p {
+  padding: 15px;
+  color: white;
+}

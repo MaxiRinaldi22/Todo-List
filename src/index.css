@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  background-color: #ddd;
+  
+}
+
+ul {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
