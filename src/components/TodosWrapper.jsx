@@ -11,7 +11,7 @@ export function TodosWrapper() {
   };
 
   const handleSubmit = () => {
-    if (value.trim() && todos.length <= 9) {
+    if (value.trim() && todos.length <= 10) {
       setTodos([...todos, value.trim()]);
       setValue("");
     }
@@ -21,9 +21,9 @@ export function TodosWrapper() {
     setTodos(todos.filter((_, i) => i !== index));
   };
 
-  // const handleRemoveAll = () => {
-  //   setTodos([])
-  // }
+  const handleRemoveAll = () => {
+    setTodos([]);
+  };
 
   return (
     <>
@@ -33,9 +33,20 @@ export function TodosWrapper() {
         value={value}
       />
 
+      <section className="container-select">
+        <select>
+          <option value="all">All</option>
+          <option value="done">Done</option>
+          <option value="todo">Todo</option>
+        </select>
+      </section>
+
       <TaskContainer todos={todos} handleDelete={handleDelete} />
 
-      {/*<button onClick={handleRemoveAll}>Remove all</button>*/}
+      <section className="container-delete">
+        <button>Delete done tasks</button>
+        <button onClick={handleRemoveAll}>Delete all tasks</button>
+      </section>
     </>
   );
 }
