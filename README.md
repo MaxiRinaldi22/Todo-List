@@ -1,16 +1,14 @@
 # Todo
 
-- LocalStorage
 - Que se pueda editar 
-- Agregar filtros de busqueda (Si estan hechos o no)
+✅ Agregar filtros de busqueda (Si estan hechos o no)
 - Dos botones elminar: 
-    - Tareas hechas
-    - Todas 
-- Opcion de dia para hacer
-- Contador
-- Diferencia de padding ( ENTRE LAS TASK CARTAS Y LARGAS)
+    ✅ Tareas hechas
+    ✅ Todas 
 - Ver de agrandar el lugar donde se da tick
+- Error maximo de tareas
 
-
-- TODOS LOS ESTILOS
-
+## ADICIONES
+- Opcion de dia para hacer
+- LocalStorage
+- Contador

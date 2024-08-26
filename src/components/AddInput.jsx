@@ -1,6 +1,6 @@
-export function AddInput({value, onChange, onSubmit}) {
+export function AddInput({ value, onChange, onSubmit }) {
   return (
-    <section className="container-add">
+    <form className="container-add" onSubmit={(e) => e.preventDefault()}>
       <input
         className="input-add"
         type="text"
@@ -10,6 +10,6 @@ export function AddInput({value, onChange, onSubmit}) {
       <button onClick={onSubmit} className="btn-add">
         Add
       </button>
-    </section>
+    </form>
   );
 }

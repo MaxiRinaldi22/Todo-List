@@ -1,15 +1,23 @@
 import { TrashIcon } from "../components/Icons";
 import "../components/Task.css";
+import { Filter } from "./Filter";
 
-function TaskItem({ task, index, handleDelete }) {
+function TaskItem({ task, handleDelete, handleCheckChange }) {
   return (
     <div id="checklist">
-      <li key={index} className="task">
+      <li key={task.id} className="task">
         <div className="task-title">
-          <input value={index} id={index} type="checkbox" />
-          <label htmlFor={index}>{task}</label>
+          <input
+            value={task.id}
+            id={task.id}
+            type="checkbox"
+            onChange={() => handleCheckChange(task.id)}
+            checked={task.completed}
+          />
+          <label htmlFor={task.id}>{task.title}</label>
         </div>
-        <button onClick={() => handleDelete(index)} className="btn-trash">
+        
+        <button onClick={() => handleDelete(task.id)} className="btn-trash">
           <TrashIcon />
         </button>
       </li>
@@ -17,19 +25,40 @@ function TaskItem({ task, index, handleDelete }) {
   );
 }
 
-export function TaskContainer({ todos, handleDelete }) {
+export function TaskContainer({
+  todos,
+  handleDelete,
+  handleSelectChange,
+  selectedOption,
+  handleCheckChange,
+}) {
+  const filteredTask = todos.filter((task) => {
+    if (selectedOption === "completed") {
+      return task.completed;
+    } else if (selectedOption === "incomplete") {
+      return !task.completed;
+    }
+    return true;
+  });
+
   return (
-    <section className="tasks">
-      <ul>
-        {todos.map((task, index) => (
-          <TaskItem
-            key={index}
-            task={task}
-            index={index}
-            handleDelete={handleDelete}
-          />
-        ))}
-      </ul>
-    </section>
+    <>
+      <Filter
+        handleSelectChange={handleSelectChange}
+        selectedOption={selectedOption}
+      />
+      <section className="tasks">
+        <ul>
+          {filteredTask.map((task) => (
+            <TaskItem
+              key={task.id}
+              task={task}
+              handleDelete={handleDelete}
+              handleCheckChange={handleCheckChange}
+            />
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }
