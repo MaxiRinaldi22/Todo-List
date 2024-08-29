@@ -2,16 +2,11 @@ import { TrashIcon, EditIcon, SaveIcon } from "../components/Icons";
 import "../components/Task.css";
 import { Filter } from "./Filter";
 
-function TaskItem({
-  task,
-  handleDelete,
-  handleCheckChange,
-  editingTasId,
-  newTitle,
-  saveTask,
-  starEditing,
-  handleTitleChange,
-}) {
+function TaskItem({ taskProps, editingProps }) {
+  const { task, handleDelete, handleCheckChange } = taskProps;
+  const { editingTasId, newTitle, saveTask, starEditing, handleTitleChange } =
+    editingProps;
+
   return (
     <div id="checklist">
       <li key={task.id} className="task">
@@ -94,14 +89,18 @@ export function TaskContainer({ taskProps, selectionProps, editingProps }) {
           {filteredTask.map((task) => (
             <TaskItem
               key={task.id}
-              task={task}
-              handleDelete={handleDelete}
-              handleCheckChange={handleCheckChange}
-              editingTasId={editingTasId}
-              newTitle={newTitle}
-              saveTask={saveTask}
-              starEditing={starEditing}
-              handleTitleChange={handleTitleChange}
+              taskProps={{
+                task,
+                handleDelete,
+                handleCheckChange,
+              }}
+              editingProps={{
+                editingTasId,
+                newTitle,
+                saveTask,
+                starEditing,
+                handleTitleChange,
+              }}
             />
           ))}
         </ul>
