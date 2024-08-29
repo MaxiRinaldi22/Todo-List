@@ -8,7 +8,7 @@ export function Filter({ handleSelectChange, selectedOption }) {
       <select>
         <option value="all">All</option>
         <option value="completed">Done</option>
-        <option value="incomplete">Todo</option>
+        <option value="incomplete">To-do</option>
       </select>
     </label>
   );

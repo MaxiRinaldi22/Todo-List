@@ -6,6 +6,7 @@ export function AddInput({ value, onChange, onSubmit }) {
         type="text"
         value={value}
         onChange={onChange}
+        maxLength='19'
       />
       <button onClick={onSubmit} className="btn-add">
         Add

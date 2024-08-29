@@ -1,14 +1,16 @@
 # Todo
 
-- Que se pueda editar 
+✅ Que se pueda editar 
 ✅ Agregar filtros de busqueda (Si estan hechos o no)
 - Dos botones elminar: 
     ✅ Tareas hechas
     ✅ Todas 
-- Ver de agrandar el lugar donde se da tick
-- Error maximo de tareas
+- Add error maximo de tareas
+
+JUNTAS LAS PROPS
+
 
 ## ADICIONES
 - Opcion de dia para hacer
 - LocalStorage
-- Contador
+✅ Contador

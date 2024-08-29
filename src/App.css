@@ -17,7 +17,7 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-color: whitesmoke;
+  background-color: rgb(224, 224, 224);
   border-radius: 8px;
   border: 1.9px solid;
 }
@@ -88,6 +88,7 @@ select {
   padding: 10px;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   font-weight: 300;
@@ -106,17 +107,16 @@ select {
 
   padding: 0 12px;
 }
+
 .task-title {
-  width: 440px;
+  width: 400px;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-
-
-.btn-trash {
+.btn {
   color: black;
   background-color: transparent;
 
@@ -131,6 +131,7 @@ p {
 
 .container-delete {
   width: 500px;
+  height: 50px;
 
   display: flex;
   align-items: center;
@@ -155,4 +156,49 @@ p {
 
 .container-delete > button:hover {
   background-color: rgb(218, 217, 217);
+}
+
+.edit {
+  width: 500px;
+  height: 32px;
+
+  margin-right: 20px;
+  margin-left: 32px;
+
+  font-size: 1.5rem;
+
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.count {
+  height: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  font-weight: 400;
+}
+
+.no-tasks-msg {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: gray;
+  font-size: 1.2rem;
+}
+
+.tasks-msg {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: black;
 }
