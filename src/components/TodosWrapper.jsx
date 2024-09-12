@@ -5,13 +5,13 @@ import { RemoveBtns } from "./RemoveBtns";
 
 export function TodosWrapper() {
   const [todos, setTodos] = useState([]);
-  const [value, setValue] = useState("");
+  const [titleValue, setTitleValue] = useState("");
   const [selectedOption, setSelectedOption] = useState("all");
-  const [editingTasId, setEditingTasId] = useState(null);
+  const [editingTaskId, setEditingTaskId] = useState(null);
   const [newTitle, setNewtitle] = useState("");
 
   const handleInputChange = (e) => {
-    setValue(e.target.value);
+    setTitleValue(e.target.value);
   };
 
   const handleSelectChange = (e) => {
@@ -27,14 +27,14 @@ export function TodosWrapper() {
   };
 
   const handleSubmit = () => {
-    if (value.trim() && todos.length <= 10) {
+    if (titleValue.trim() && todos.length <= 10) {
       const newTask = {
         id: Date.now(),
-        title: value.trim(),
+        title: titleValue.trim(),
         completed: false,
       };
       setTodos([...todos, newTask]);
-      setValue("");
+      setTitleValue("");
     }
   };
 
@@ -43,7 +43,7 @@ export function TodosWrapper() {
   };
 
   const starEditing = (id, currentTitle) => {
-    setEditingTasId(id);
+    setEditingTaskId(id);
     setNewtitle(currentTitle);
   };
 
@@ -55,7 +55,7 @@ export function TodosWrapper() {
           : task
       )
     );
-    setEditingTasId(null);
+    setEditingTaskId(null);
     setNewtitle("");
   };
 
@@ -65,12 +65,12 @@ export function TodosWrapper() {
 
   const handleRemoveDoneTasks = () => {
     setTodos(todos.filter((task) => task.completed === false));
-    setValue("");
+    setTitleValue("");
   };
 
   const handleRemoveAllTasks = () => {
     setTodos([]);
-    setValue("");
+    setTitleValue("");
   };
 
   return (
@@ -78,7 +78,8 @@ export function TodosWrapper() {
       <AddInput
         onSubmit={handleSubmit}
         onChange={handleInputChange}
-        value={value}
+        titleValue={titleValue}
+        todos={todos}
       />
 
       <TaskContainer
@@ -92,7 +93,7 @@ export function TodosWrapper() {
           handleSelectChange,
         }}
         editingProps={{
-          editingTasId,
+          editingTaskId,
           newTitle,
           saveTask,
           starEditing,

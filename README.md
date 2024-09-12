@@ -1,16 +1,17 @@
-# Todo
+# To-Do List App 📑
 
-✅ Que se pueda editar 
-✅ Agregar filtros de busqueda (Si estan hechos o no)
-- Dos botones elminar: 
-    ✅ Tareas hechas
-    ✅ Todas 
-- Add error maximo de tareas
+A simple and functional To-Do List application built using React. It allows users to add, edit, delete, and filter tasks by their completion status.
 
-JUNTAS LAS PROPS
+## Features
 
+- Add new tasks
+- Edit existing tasks
+- Mark tasks as completed or uncompleted
+- Delete tasks
+- Filter tasks by:
+  - All tasks
+  - Completed tasks
+  - Pending tasks
 
-## ADICIONES
-- Opcion de dia para hacer
-- LocalStorage
-✅ Contador
+# Pending...
+- Save tasks locally in the browser's storage

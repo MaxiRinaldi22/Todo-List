@@ -9,54 +9,56 @@ function TaskItem({ taskProps, editingProps }) {
 
   return (
     <div id="checklist">
-      <li key={task.id} className="task">
-        {editingTasId === task.id ? (
-          <>
-            <div className="task-title">
-              <input
-                className="edit"
-                type="text"
-                value={newTitle}
-                onChange={handleTitleChange}
-              />
-            </div>
+      <ul>
+        <li key={task.id} className="task">
+          {editingTasId === task.id ? (
+            <>
+              <div className="task-title">
+                <input
+                  className="edit"
+                  type="text"
+                  value={newTitle}
+                  onChange={handleTitleChange}
+                />
+              </div>
 
-            <button
-              type="submit"
-              onClick={() => saveTask(task.id, task.completed)}
-              className="btn"
-            >
-              <SaveIcon />
-            </button>
-            <button onClick={() => handleDelete(task.id)} className="btn">
-              <TrashIcon />
-            </button>
-          </>
-        ) : (
-          <>
-            <div className="task-title">
-              <input
-                value={task.id}
-                id={task.id}
-                type="checkbox"
-                onChange={() => handleCheckChange(task.id)}
-                checked={task.completed}
-              />
-              <label htmlFor={task.id}>{task.title}</label>
-            </div>
+              <button
+                type="submit"
+                onClick={() => saveTask(task.id, task.completed)}
+                className="btn"
+              >
+                <SaveIcon />
+              </button>
+              <button onClick={() => handleDelete(task.id)} className="btn">
+                <TrashIcon />
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="task-title">
+                <input
+                  value={task.id}
+                  id={task.id}
+                  type="checkbox"
+                  onChange={() => handleCheckChange(task.id)}
+                  checked={task.completed}
+                />
+                <label htmlFor={task.id}>{task.title}</label>
+              </div>
 
-            <button
-              onClick={() => starEditing(task.id, task.title)}
-              className="btn"
-            >
-              <EditIcon />
-            </button>
-            <button onClick={() => handleDelete(task.id)} className="btn">
-              <TrashIcon />
-            </button>
-          </>
-        )}
-      </li>
+              <button
+                onClick={() => starEditing(task.id, task.title)}
+                className="btn"
+              >
+                <EditIcon />
+              </button>
+              <button onClick={() => handleDelete(task.id)} className="btn">
+                <TrashIcon />
+              </button>
+            </>
+          )}
+        </li>
+      </ul>
     </div>
   );
 }
