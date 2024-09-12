@@ -1,14 +1,20 @@
 import { AddInput } from "../components/AddInput";
 import { TaskContainer } from "../components/TaskContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RemoveBtns } from "./RemoveBtns";
 
 export function TodosWrapper() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
   const [titleValue, setTitleValue] = useState("");
   const [selectedOption, setSelectedOption] = useState("all");
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [newTitle, setNewtitle] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleInputChange = (e) => {
     setTitleValue(e.target.value);

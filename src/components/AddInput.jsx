@@ -7,7 +7,7 @@ export function AddInput({ titleValue , onChange, onSubmit, todos }) {
         value={titleValue}
         onChange={onChange}
         maxLength='19'
-        placeholder={todos.length >= 11 && 'No more space to intoduce a task'} 
+        placeholder={todos.length >= 11 ? 'No more space to intoduce a task': undefined} 
       />
       <button onClick={onSubmit} className="btn-add">
         Add

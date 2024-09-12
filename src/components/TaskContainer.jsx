@@ -4,14 +4,14 @@ import { Filter } from "./Filter";
 
 function TaskItem({ taskProps, editingProps }) {
   const { task, handleDelete, handleCheckChange } = taskProps;
-  const { editingTasId, newTitle, saveTask, starEditing, handleTitleChange } =
+  const { editingTaskId, newTitle, saveTask, starEditing, handleTitleChange } =
     editingProps;
 
   return (
     <div id="checklist">
       <ul>
         <li key={task.id} className="task">
-          {editingTasId === task.id ? (
+          {editingTaskId === task.id ? (
             <>
               <div className="task-title">
                 <input
@@ -66,7 +66,7 @@ function TaskItem({ taskProps, editingProps }) {
 export function TaskContainer({ taskProps, selectionProps, editingProps }) {
   const { todos, handleDelete, handleCheckChange } = taskProps;
   const { selectedOption, handleSelectChange } = selectionProps;
-  const { editingTasId, newTitle, saveTask, starEditing, handleTitleChange } =
+  const { editingTaskId, newTitle, saveTask, starEditing, handleTitleChange } =
     editingProps;
 
   const filteredTask = todos.filter((task) => {
@@ -97,7 +97,7 @@ export function TaskContainer({ taskProps, selectionProps, editingProps }) {
                 handleCheckChange,
               }}
               editingProps={{
-                editingTasId,
+                editingTaskId,
                 newTitle,
                 saveTask,
                 starEditing,

@@ -12,6 +12,4 @@ A simple and functional To-Do List application built using React. It allows user
   - All tasks
   - Completed tasks
   - Pending tasks
-
-# Pending...
-- Save tasks locally in the browser's storage
+- LocalStorage
