@@ -112,7 +112,7 @@ export function TaskContainer({ taskProps, selectionProps, editingProps }) {
             <p className="no-tasks-msg">No tasks yet...</p>
           ) : (
             <p className="tasks-msg">
-              {completedTasks.length}/{todos.length}
+              {completedTasks.length}/{todos.length} 
             </p>
           )}
         </div>

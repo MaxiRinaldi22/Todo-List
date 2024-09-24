@@ -1,6 +1,5 @@
 main {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -9,8 +8,8 @@ main {
 }
 
 .container-main {
-  width: 600px;
-  max-width: 600px;
+  height: 700px;
+  width: 400px;
 
   display: flex;
   flex-direction: column;
@@ -19,7 +18,7 @@ main {
 
   background-color: rgb(224, 224, 224);
   border-radius: 8px;
-  border: 1.9px solid;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .title {
@@ -75,7 +74,7 @@ main {
   align-items: center;
   justify-content: flex-end;
 
-  padding-right: 50px;
+  padding-right: 15px;
   margin-bottom: 10px;
 }
 
@@ -88,8 +87,8 @@ select {
 }
 
 .tasks {
-  width: 500px;
-  min-height: 600px;
+  width: 370px;
+  height: 100%;
   padding: 10px;
 
   display: flex;
@@ -104,15 +103,12 @@ select {
 }
 
 .task {
-  width: 480px;
-  min-height: 50px;
-  padding: 0 12px;
-
+  padding-left: 12px;
   display: flex;
 }
 
 .task-title {
-  width: 400px;
+  width: 270px;
 
   display: flex;
   align-items: center;
@@ -133,11 +129,12 @@ p {
 }
 
 .container-delete {
-  width: 500px;
   height: 50px;
+  padding: 10px;
 
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: space-around;
 }
 
@@ -145,7 +142,7 @@ p {
   padding: 6px;
   width: 130px;
 
-  font-weight: bold;
+  font-weight: 600;
 
   background: white;
   color: black;
@@ -162,12 +159,6 @@ p {
 }
 
 .edit {
-  width: 500px;
-  min-height: 32px;
-
-  margin-right: 20px;
-  margin-left: 32px;
-
   font-size: 1.5rem;
 
   border: none;
@@ -206,39 +197,20 @@ p {
   color: black;
 }
 
-@media (max-width: 627px) {
-  .container-main {
-    width: 450px;
-  }
-  .tasks {
-    width: 400px;
-  }
-  .task {
-    width: auto;
-    flex-wrap: wrap;
-  }
-  .task-title {
-    width: 294px;
-  }
-  .edit {
-    width: 254px;
-  }
-}
 
-@media (max-width: 480px) {
+@media (min-width: 1024px) {
   .container-main {
-    width: 400px;
+    height: 800px;
+    width: 550px
+  }
+  .container-select {
+    padding-right: 25px;
   }
   .tasks {
-    width: 350px;
+    width: 500px;
   }
-  .task {
-    width: auto;
-  }
+
   .task-title {
-    width: 244px;
-  }
-  .edit {
-    width: 190px;
+    width: 400px;
   }
 }
